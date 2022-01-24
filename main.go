@@ -53,6 +53,8 @@ func (w *WebsocketHandler) HandleWebsocket(ctx echo.Context) error {
 
 	conn, err := w.upgrader.Upgrade(ctx.Response(), ctx.Request(), nil)
 	if err != nil {
+		w.logger.WithError(err).Error("Failed to upgrade connection")
+
 		return err
 	}
 	defer conn.Close()
