@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"fmt"
+	"net/http"
 	"time"
 
 	"github.com/gorilla/websocket"
@@ -21,10 +22,8 @@ func main() {
 		upgrader: &websocket.Upgrader{
 			ReadBufferSize:  1024,
 			WriteBufferSize: 1024,
+			CheckOrigin:     func(r *http.Request) bool { return true },
 		},
-		// producer: producer.Producer{
-		// 	Delay: time.Second,
-		// },
 		logger: logrus.New(),
 	}
 
