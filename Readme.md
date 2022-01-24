@@ -1,6 +1,10 @@
 # Start server
 
 ```sh
+$ go mod download
+```
+
+```sh
 $ go run main.go
 
    ____    __
