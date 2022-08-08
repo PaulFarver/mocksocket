@@ -20,3 +20,5 @@ ____________________________________O/_______
 
 websockets should be available at `localhost:8080/sequence/:sequence/delay/:delay`
 where `sequence` can be `success`, `fail` or `random` and `delay` is the duration of time to wait between messages in the form of `200ms`, `10s` or `1m`
+
+suggested test client: https://github.com/vi/websocat
